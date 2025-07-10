@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BillSync</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>BillSync</h1>
+    <form id="billForm">
+      <input type="text" id="payer" placeholder="Who paid? (e.g. Alice)" required />
+      <input type="number" id="amount" placeholder="Amount (₹)" required />
+      <input type="text" id="participants" placeholder="Participants (comma separated)" required />
+      <button type="submit">Add Bill</button>
+    </form>
+
+    <div class="bills" id="billList">
+      <!-- Bills will appear here -->
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
