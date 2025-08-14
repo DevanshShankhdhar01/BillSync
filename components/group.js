@@ -21,10 +21,7 @@ exports.createGroup = async (req, res) => {
         if (validator.notNull(newGroup.groupName) &&
             validator.currencyValidation(newGroup.groupCurrency)) {
 
-            /*
-            Split Json is used to store the user split value (how much a person owes)
-            When the Group is created all members are assigned the split value as 0    
-            */
+            
             var splitJson = {}
 
             for (var user of newGroup.groupMembers) {
@@ -40,10 +37,7 @@ exports.createGroup = async (req, res) => {
                 splitJson[user] = 0
             }
 
-            /*
-            Split Json will now contain an json with user email as the key and the split amount (currently 0) as the value
-            We now store this splitJson object to the newGroup model so it can be stored to DB directly
-            */
+          
             newGroup.split = splitJson
 
             //Validating the group Owner exist in the DB 
@@ -70,12 +64,7 @@ exports.createGroup = async (req, res) => {
 }
 
 
-/*
-View Group function 
-This function is used to display the group details 
-Accepts: Group Id 
-Returns: Group Info 
-*/
+
 exports.viewGroup = async (req, res) => {
     try {
         const group = await model.Group.findOne({
@@ -98,12 +87,7 @@ exports.viewGroup = async (req, res) => {
     }
 }
 
-/*
-Find all user group function
-This function is basically to display the list of group that a user belongs
-Accepts: user email ID
-Validation: email Id present in DB
-*/
+
 exports.findUserGroup = async (req, res) => {
     try {
         const user = await model.User.findOne({
@@ -131,12 +115,7 @@ exports.findUserGroup = async (req, res) => {
     }
 }
 
-/*
-Edit Group Function
-This function is to edit the already existing group to make changes.
-Accepts: Group Id
-        Modified group info
-*/
+
 exports.editGroup = async (req, res) => {
     try {
         var group = await model.Group.findOne({
