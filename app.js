@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var dotenv = require('dotenv')
 var express = require('express')
 var logger = require('./helper/logger')
@@ -43,7 +42,6 @@ app.listen(port, (err) => {
     console.log(`Server started in PORT | ${port}`)
     logger.info(`Server started in PORT | ${port}`)
 })
-=======
 
     const billForm = document.getElementById("billForm");
     const billList = document.getElementById("billList");
@@ -93,4 +91,3 @@ app.listen(port, (err) => {
       });
     }
   
->>>>>>> 7a3258cadf81da7a04a73a8bcc3a8e8b91339059
