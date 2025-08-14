@@ -16,7 +16,7 @@ router.post('/v1/register', controller.userReg)
 router.post('/v1/login', controller.userLogin)
 
 //View User router 
-router.post('/v1/view', apiAuth.validateToken,controller.viewUser)
+router.post('/v1/view/pass', apiAuth.validateToken,controller.viewUser)
 
 //Edit User router
 router.post('/v1/edit', apiAuth.validateToken, controller.editUser)
